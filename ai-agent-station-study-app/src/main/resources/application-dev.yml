@@ -32,7 +32,7 @@ spring:
   ai:
     openai:
       base-url: https://apis.itedus.cn
-      api-key: sk-63b2LihHwKXMjCFQB3C501FeD20b47F6**** 可以联系小傅哥申请
+      api-key: sk-EPCeIrD8SSQdSFRh92E4F72bD3Cf4c1e8f23E651B3D6D7B5
 
 # MyBatis 配置【如需使用记得打开】
 #mybatis:

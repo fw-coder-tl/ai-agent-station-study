@@ -109,6 +109,15 @@
             <groupId>com.sweet.ai</groupId>
             <artifactId>ai-agent-station-study-infrastructure</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.sweet.ai</groupId>
+            <artifactId>ai-agent-station-study-trigger</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.sweet.ai</groupId>
+            <artifactId>ai-agent-station-study-infrastructure</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
