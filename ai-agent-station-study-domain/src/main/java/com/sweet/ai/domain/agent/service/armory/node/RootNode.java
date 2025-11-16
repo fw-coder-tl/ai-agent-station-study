@@ -8,6 +8,7 @@ import com.sweet.ai.domain.agent.service.armory.node.factory.DefaultArmoryStrate
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
@@ -21,6 +22,8 @@ public class RootNode extends AbstractArmorySupport {
 
     private final Map<String,ILoadDataStrategy> loadDataStrategyMap;
 
+    @Resource
+    private AiClientApiNode aiClientApiNode;
 
     public RootNode(Map<String, ILoadDataStrategy> loadDataStrategyMap) {
         this.loadDataStrategyMap = loadDataStrategyMap;
@@ -33,7 +36,9 @@ public class RootNode extends AbstractArmorySupport {
     @Override
     protected void multiThread(ArmoryCommandEntity requestParameter, DefaultArmoryStrategyFactory.DynamicContext dynamicContext) throws ExecutionException, InterruptedException, TimeoutException {
         // 加载数据
+        // 获取加载数据的模式
         ILoadDataStrategy loadDataStrategy = loadDataStrategyMap.get(requestParameter.getLoadDataStrategy());
+        // 调用策略模式（会异步加载到上下文中）
         loadDataStrategy.loadData(requestParameter, dynamicContext);
     }
 
@@ -45,6 +50,6 @@ public class RootNode extends AbstractArmorySupport {
 
     @Override
     public StrategyHandler<ArmoryCommandEntity, DefaultArmoryStrategyFactory.DynamicContext, String> get(ArmoryCommandEntity armoryCommandEntity, DefaultArmoryStrategyFactory.DynamicContext dynamicContext) throws Exception {
-        return defaultStrategyHandler;
+        return aiClientApiNode;
     }
 }
