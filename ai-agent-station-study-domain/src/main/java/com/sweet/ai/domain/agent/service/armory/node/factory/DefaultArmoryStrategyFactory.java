@@ -1,5 +1,7 @@
 package com.sweet.ai.domain.agent.service.armory.node.factory;
 
+import cn.bugstack.wrench.design.framework.tree.StrategyHandler;
+import com.sweet.ai.domain.agent.model.entity.ArmoryCommandEntity;
 import com.sweet.ai.domain.agent.service.armory.node.RootNode;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,10 +12,22 @@ import org.springframework.stereotype.Service;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 工厂类
+ */
+
 @Service
 public class DefaultArmoryStrategyFactory {
 
+    private final RootNode rootNode;
 
+    public DefaultArmoryStrategyFactory(RootNode rootNode) {
+        this.rootNode = rootNode;
+    }
+
+    public StrategyHandler<ArmoryCommandEntity, DynamicContext, String> armoryStrategyHandler(){
+        return rootNode;
+    }
 
     @Data
     @Builder
