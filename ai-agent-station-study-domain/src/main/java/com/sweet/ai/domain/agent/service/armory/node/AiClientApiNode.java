@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.openai.api.OpenAiApi;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -19,6 +20,8 @@ import java.util.List;
 @Service
 public class AiClientApiNode extends AbstractArmorySupport {
 
+    @Resource
+    private AiClientToolMcpNode aiClientToolMcpNode;
 
     @Override
     protected String doApply(ArmoryCommandEntity armoryCommandEntity, DefaultArmoryStrategyFactory.DynamicContext dynamicContext) throws Exception {
@@ -49,6 +52,16 @@ public class AiClientApiNode extends AbstractArmorySupport {
 
     @Override
     public StrategyHandler<ArmoryCommandEntity, DefaultArmoryStrategyFactory.DynamicContext, String> get(ArmoryCommandEntity armoryCommandEntity, DefaultArmoryStrategyFactory.DynamicContext dynamicContext) throws Exception {
-        return defaultStrategyHandler;
+        return aiClientToolMcpNode;
+    }
+
+    @Override
+    public String beanName(String beanId){
+        return  AiAgentEnumVO.AI_CLIENT_API.getBeanName(beanId);
+    }
+
+    @Override
+    public String dataName(){
+        return AiAgentEnumVO.AI_CLIENT_API.getDataName();
     }
 }
