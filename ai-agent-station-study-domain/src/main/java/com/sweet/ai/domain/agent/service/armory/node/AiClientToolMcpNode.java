@@ -113,12 +113,12 @@ public class AiClientToolMcpNode extends AbstractArmorySupport {
     }
 
     @Override
-    public String dataName(){
+    protected String dataName(){
         return AiAgentEnumVO.AI_CLIENT_TOOL_MCP.getDataName();
     }
 
     @Override
-    public String beanName(String beanId){
+    protected String beanName(String beanId){
         return AiAgentEnumVO.AI_CLIENT_TOOL_MCP.getBeanName(beanId);
     }
 }

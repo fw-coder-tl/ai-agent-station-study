@@ -56,12 +56,12 @@ public class AiClientApiNode extends AbstractArmorySupport {
     }
 
     @Override
-    public String beanName(String beanId){
+    protected String beanName(String beanId){
         return  AiAgentEnumVO.AI_CLIENT_API.getBeanName(beanId);
     }
 
     @Override
-    public String dataName(){
+    protected String dataName(){
         return AiAgentEnumVO.AI_CLIENT_API.getDataName();
     }
 }

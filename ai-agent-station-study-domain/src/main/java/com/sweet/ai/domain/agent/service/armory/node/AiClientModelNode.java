@@ -14,6 +14,7 @@ import org.springframework.ai.openai.OpenAiChatOptions;
 import org.springframework.ai.openai.api.OpenAiApi;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +22,8 @@ import java.util.List;
 @Service
 public class AiClientModelNode extends AbstractArmorySupport{
 
+    @Resource
+    private AiClientAdvisorNode  aiClientAdvisorNode;
 
     @Override
     protected String doApply(ArmoryCommandEntity armoryCommandEntity, DefaultArmoryStrategyFactory.DynamicContext dynamicContext) throws Exception {
@@ -65,16 +68,16 @@ public class AiClientModelNode extends AbstractArmorySupport{
 
     @Override
     public StrategyHandler<ArmoryCommandEntity, DefaultArmoryStrategyFactory.DynamicContext, String> get(ArmoryCommandEntity armoryCommandEntity, DefaultArmoryStrategyFactory.DynamicContext dynamicContext) throws Exception {
-        return null;
+        return aiClientAdvisorNode;
     }
 
     @Override
-    public String dataName() {
+    protected String dataName() {
         return AiAgentEnumVO.AI_CLIENT_MODEL.getDataName();
     }
 
     @Override
-    public String beanName(String beanId) {
+    protected String beanName(String beanId) {
         return AiAgentEnumVO.AI_CLIENT_MODEL.getBeanName(beanId);
     }
 }
