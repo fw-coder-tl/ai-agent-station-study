@@ -31,7 +31,7 @@ public class AiClientApiNode extends AbstractArmorySupport {
 
         if (aiClientApiList == null || aiClientApiList.isEmpty()) {
             log.warn("没有需要初始化的ai client api");
-            return null;
+            router(armoryCommandEntity, dynamicContext);
         }
 
         for (AiClientApiVO aiClientApiVO : aiClientApiList) {
