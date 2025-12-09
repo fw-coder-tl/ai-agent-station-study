@@ -8,6 +8,7 @@ import com.sweet.ai.domain.agent.model.valobj.AiAgentClientFlowConfigVO;
 import com.sweet.ai.domain.agent.model.valobj.AiAgentVO;
 import com.sweet.ai.domain.agent.model.valobj.enums.AiAgentEnumVO;
 import com.sweet.ai.domain.agent.service.armory.node.factory.DefaultArmoryStrategyFactory;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.Collections;
@@ -17,6 +18,7 @@ import java.util.stream.Collectors;
 /***
  * 装配服务
  */
+@Service
 public class ArmoryService implements IArmoryService {
 
     @Resource

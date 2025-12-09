@@ -1,4 +1,4 @@
-package com.sweet.ai.domain.agent;
+package com.sweet.ai.domain.agent.service;
 
 import com.sweet.ai.domain.agent.model.entity.ExecuteCommandEntity;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitter;

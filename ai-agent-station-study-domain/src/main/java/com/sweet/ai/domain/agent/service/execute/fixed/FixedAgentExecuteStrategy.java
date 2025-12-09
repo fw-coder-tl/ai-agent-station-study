@@ -1,8 +1,7 @@
 package com.sweet.ai.domain.agent.service.execute.fixed;
 
-import ch.qos.logback.classic.Logger;
 import com.alibaba.fastjson2.JSON;
-import com.sweet.ai.domain.agent.IExecuteStrategy;
+import com.sweet.ai.domain.agent.service.IExecuteStrategy;
 import com.sweet.ai.domain.agent.adapter.repository.IAgentRepository;
 import com.sweet.ai.domain.agent.model.entity.AutoAgentExecuteResultEntity;
 import com.sweet.ai.domain.agent.model.entity.ExecuteCommandEntity;
