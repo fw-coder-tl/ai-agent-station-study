@@ -7,7 +7,8 @@ import com.sweet.ai.api.dto.ArmoryAgentRequestDTO;
 import com.sweet.ai.api.dto.ArmoryApiRequestDTO;
 import com.sweet.ai.api.dto.AutoAgentRequestDTO;
 import com.sweet.ai.api.response.Response;
-import com.sweet.ai.domain.agent.IArmoryService;
+import com.sweet.ai.domain.agent.service.IAgentDispatchService;
+import com.sweet.ai.domain.agent.service.IArmoryService;
 import com.sweet.ai.domain.agent.model.entity.ExecuteCommandEntity;
 import com.sweet.ai.domain.agent.model.valobj.AiAgentVO;
 import com.sweet.ai.types.enums.ResponseCode;
@@ -26,8 +27,8 @@ import java.util.List;
 @CrossOrigin(origins = "*", allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.OPTIONS})
 public class AiAgentController implements IAiAgentService {
 
-//    @Resource
-//    private IAgentDispatchService agentDispatchService;
+    @Resource
+    private IAgentDispatchService agentDispatchService;
 
     @Resource
     private IArmoryService armoryService;

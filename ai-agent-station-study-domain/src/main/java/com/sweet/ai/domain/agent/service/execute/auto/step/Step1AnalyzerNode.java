@@ -20,7 +20,7 @@ public class Step1AnalyzerNode extends AbstractExecuteSupport {
 
     @Override
     protected String doApply(ExecuteCommandEntity requestParameter, DefaultAutoAgentExecuteStrategyFactory.DynamicContext dynamicContext) throws Exception {
-        log.info("\n === 执行第{}步操作 ===",dynamicContext.getStep());
+        log.info("\n === 执行第{}步操作 ===", dynamicContext.getStep());
 
         // 获取配置信息
         AiAgentClientFlowConfigVO aiAgentClientFlowConfigVO = dynamicContext.getAiAgentClientFlowConfigVOMap().get(AiClientTypeEnumVO.TASK_ANALYZER_CLIENT.getCode());
@@ -42,7 +42,8 @@ public class Step1AnalyzerNode extends AbstractExecuteSupport {
                 .advisors(a -> a
                         .param(CHAT_MEMORY_CONVERSATION_ID_KEY, requestParameter.getSessionId())
                         .param(CHAT_MEMORY_RETRIEVE_SIZE_KEY, 1024))
-                .call().content();        assert analysisResult != null;
+                .call().content();
+        assert analysisResult != null;
 
         assert analysisResult != null;
         parseAnalysisResult(dynamicContext, analysisResult, requestParameter.getSessionId());

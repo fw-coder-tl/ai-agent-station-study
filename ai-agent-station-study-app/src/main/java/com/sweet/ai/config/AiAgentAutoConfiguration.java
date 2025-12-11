@@ -1,7 +1,7 @@
 package com.sweet.ai.config;
 
 import com.alibaba.fastjson.JSON;
-import com.sweet.ai.domain.agent.IArmoryService;
+import com.sweet.ai.domain.agent.service.IArmoryService;
 import com.sweet.ai.domain.agent.model.valobj.AiAgentVO;
 import com.sweet.ai.domain.agent.service.armory.node.factory.DefaultArmoryStrategyFactory;
 import lombok.extern.slf4j.Slf4j;

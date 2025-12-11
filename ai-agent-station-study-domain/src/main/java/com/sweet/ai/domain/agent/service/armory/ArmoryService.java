@@ -1,7 +1,7 @@
 package com.sweet.ai.domain.agent.service.armory;
 
 import cn.bugstack.wrench.design.framework.tree.StrategyHandler;
-import com.sweet.ai.domain.agent.IArmoryService;
+import com.sweet.ai.domain.agent.service.IArmoryService;
 import com.sweet.ai.domain.agent.adapter.repository.IAgentRepository;
 import com.sweet.ai.domain.agent.model.entity.ArmoryCommandEntity;
 import com.sweet.ai.domain.agent.model.valobj.AiAgentClientFlowConfigVO;
