@@ -48,7 +48,7 @@ spring:
     agent:
       auto-config:
         enabled: true
-        client-ids: 3101,3102,3103,3104
+        client-ids: 6101
 
 # 扳手通用组件配置
 xfg:
