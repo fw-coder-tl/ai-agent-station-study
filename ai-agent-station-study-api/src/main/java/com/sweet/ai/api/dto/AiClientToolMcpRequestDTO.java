@@ -8,39 +8,47 @@ import lombok.NoArgsConstructor;
 import java.io.Serial;
 import java.io.Serializable;
 
+/**
+ * MCP客户端配置请求 DTO
+ */
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AiAgentResponseDTO implements Serializable {
+public class AiClientToolMcpRequestDTO implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
 
     /**
-     * 智能体ID
+     * 主键ID（更新时使用）
      */
-    private String agentId;
+    private Long id;
 
     /**
-     * 智能体名称
+     * MCP ID
      */
-    private String agentName;
+    private String mcpId;
 
     /**
-     * 描述
+     * MCP名称
      */
-    private String description;
+    private String mcpName;
 
     /**
-     * 渠道类型(agent，chat_stream)
+     * 传输类型(sse/stdio)
      */
-    private String channel;
+    private String transportType;
 
     /**
-     * 执行策略(auto、flow)
+     * 传输配置(sse/stdio)
      */
-    private String strategy;
+    private String transportConfig;
+
+    /**
+     * 请求超时时间(分钟)
+     */
+    private Integer requestTimeout;
 
     /**
      * 状态(0:禁用,1:启用)

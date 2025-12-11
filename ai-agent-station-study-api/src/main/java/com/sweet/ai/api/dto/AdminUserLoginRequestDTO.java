@@ -8,33 +8,26 @@ import lombok.NoArgsConstructor;
 import java.io.Serial;
 import java.io.Serializable;
 
+/**
+ * 管理员用户登录请求 DTO
+ */
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AutoAgentRequestDTO implements Serializable {
+public class AdminUserLoginRequestDTO implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
 
     /**
-     * AI智能体ID
+     * 用户名（登录账号）
      */
-    private String aiAgentId;
+    private String username;
 
     /**
-     * 用户消息
+     * 密码
      */
-    private String message;
-
-    /**
-     * 会话ID
-     */
-    private String sessionId;
-
-    /**
-     * 最大执行步数
-     */
-    private Integer maxStep;
+    private String password;
 
 }

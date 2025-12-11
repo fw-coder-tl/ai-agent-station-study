@@ -8,39 +8,37 @@ import lombok.NoArgsConstructor;
 import java.io.Serial;
 import java.io.Serializable;
 
+/**
+ * 知识库配置请求 DTO
+ */
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AiAgentResponseDTO implements Serializable {
+public class AiClientRagOrderRequestDTO implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
 
     /**
-     * 智能体ID
+     * 主键ID（更新时使用）
      */
-    private String agentId;
+    private Long id;
 
     /**
-     * 智能体名称
+     * 知识库ID
      */
-    private String agentName;
+    private String ragId;
 
     /**
-     * 描述
+     * 知识库名称
      */
-    private String description;
+    private String ragName;
 
     /**
-     * 渠道类型(agent，chat_stream)
+     * 知识标签
      */
-    private String channel;
-
-    /**
-     * 执行策略(auto、flow)
-     */
-    private String strategy;
+    private String knowledgeTag;
 
     /**
      * 状态(0:禁用,1:启用)

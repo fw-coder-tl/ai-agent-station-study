@@ -10,6 +10,9 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitter
 
 import java.util.List;
 
+/**
+ * Ai Agent 服务接口
+ */
 public interface IAiAgentService {
 
     ResponseBodyEmitter autoAgent(AutoAgentRequestDTO request, HttpServletResponse response);

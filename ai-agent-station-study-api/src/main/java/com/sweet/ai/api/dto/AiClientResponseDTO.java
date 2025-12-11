@@ -7,25 +7,34 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
+/**
+ * AI客户端配置响应 DTO
+ */
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AiAgentResponseDTO implements Serializable {
+public class AiClientResponseDTO implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
 
     /**
-     * 智能体ID
+     * 主键ID
      */
-    private String agentId;
+    private Long id;
 
     /**
-     * 智能体名称
+     * 客户端ID
      */
-    private String agentName;
+    private String clientId;
+
+    /**
+     * 客户端名称
+     */
+    private String clientName;
 
     /**
      * 描述
@@ -33,18 +42,18 @@ public class AiAgentResponseDTO implements Serializable {
     private String description;
 
     /**
-     * 渠道类型(agent，chat_stream)
-     */
-    private String channel;
-
-    /**
-     * 执行策略(auto、flow)
-     */
-    private String strategy;
-
-    /**
      * 状态(0:禁用,1:启用)
      */
     private Integer status;
+
+    /**
+     * 创建时间
+     */
+    private LocalDateTime createTime;
+
+    /**
+     * 更新时间
+     */
+    private LocalDateTime updateTime;
 
 }

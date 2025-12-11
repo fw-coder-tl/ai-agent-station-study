@@ -8,39 +8,42 @@ import lombok.NoArgsConstructor;
 import java.io.Serial;
 import java.io.Serializable;
 
+/**
+ * 系统提示词配置请求 DTO
+ */
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AiAgentResponseDTO implements Serializable {
+public class AiClientSystemPromptRequestDTO implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
 
     /**
-     * 智能体ID
+     * 主键ID（更新时使用）
      */
-    private String agentId;
+    private Long id;
 
     /**
-     * 智能体名称
+     * 提示词ID
      */
-    private String agentName;
+    private String promptId;
+
+    /**
+     * 提示词名称
+     */
+    private String promptName;
+
+    /**
+     * 提示词内容
+     */
+    private String promptContent;
 
     /**
      * 描述
      */
     private String description;
-
-    /**
-     * 渠道类型(agent，chat_stream)
-     */
-    private String channel;
-
-    /**
-     * 执行策略(auto、flow)
-     */
-    private String strategy;
 
     /**
      * 状态(0:禁用,1:启用)

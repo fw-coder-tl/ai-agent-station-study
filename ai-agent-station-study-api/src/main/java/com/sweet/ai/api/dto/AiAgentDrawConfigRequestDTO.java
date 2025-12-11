@@ -1,25 +1,25 @@
-package com.sweet.ai.infrastructure.dao.po;
+package com.sweet.ai.api.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
+import java.io.Serial;
+import java.io.Serializable;
 
 /**
- * AI智能体拖拉拽配置主表
+ * AI智能体拖拉拽配置请求DTO
+ * 2025/1/20 10:00
  */
 @Data
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
-public class AiAgentDrawConfig {
+@AllArgsConstructor
+public class AiAgentDrawConfigRequestDTO implements Serializable {
 
-    /**
-     * 主键ID
-     */
-    private Long id;
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     /**
      * 配置ID（唯一标识）
@@ -37,7 +37,7 @@ public class AiAgentDrawConfig {
     private String description;
 
     /**
-     * 关联的智能体ID（来自ai_agent表）
+     * 关联的智能体ID
      */
     private String agentId;
 
@@ -45,16 +45,6 @@ public class AiAgentDrawConfig {
      * 完整的拖拉拽配置JSON数据（包含nodes和edges）
      */
     private String configData;
-
-    /**
-     * 配置版本号
-     */
-    private Integer version;
-
-    /**
-     * 状态(0:禁用,1:启用)
-     */
-    private Integer status;
 
     /**
      * 创建人
@@ -65,15 +55,5 @@ public class AiAgentDrawConfig {
      * 更新人
      */
     private String updateBy;
-
-    /**
-     * 创建时间
-     */
-    private LocalDateTime createTime;
-
-    /**
-     * 更新时间
-     */
-    private LocalDateTime updateTime;
 
 }

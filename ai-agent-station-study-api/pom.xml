@@ -26,6 +26,24 @@
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-core</artifactId>
         </dependency>
+
+        <!-- 系统模块 -->
+        <dependency>
+            <groupId>com.sweet.ai</groupId>
+            <artifactId>ai-agent-station-study-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.sweet.ai</groupId>
+            <artifactId>ai-agent-station-study-types</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.sweet.ai</groupId>
+            <artifactId>ai-agent-station-study-domain</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.sweet.ai</groupId>
+            <artifactId>ai-agent-station-study-infrastructure</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

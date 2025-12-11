@@ -8,39 +8,47 @@ import lombok.NoArgsConstructor;
 import java.io.Serial;
 import java.io.Serializable;
 
+/**
+ * AI客户端API配置请求 DTO
+ */
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AiAgentResponseDTO implements Serializable {
+public class AiClientApiRequestDTO implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
 
     /**
-     * 智能体ID
+     * 主键ID（更新时使用）
      */
-    private String agentId;
+    private Long id;
 
     /**
-     * 智能体名称
+     * API ID
      */
-    private String agentName;
+    private String apiId;
 
     /**
-     * 描述
+     * 基础URL
      */
-    private String description;
+    private String baseUrl;
 
     /**
-     * 渠道类型(agent，chat_stream)
+     * API密钥
      */
-    private String channel;
+    private String apiKey;
 
     /**
-     * 执行策略(auto、flow)
+     * 对话补全路径
      */
-    private String strategy;
+    private String completionsPath;
+
+    /**
+     * 嵌入向量路径
+     */
+    private String embeddingsPath;
 
     /**
      * 状态(0:禁用,1:启用)

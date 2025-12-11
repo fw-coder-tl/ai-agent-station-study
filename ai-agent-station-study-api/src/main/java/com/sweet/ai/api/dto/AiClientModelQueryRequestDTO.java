@@ -8,42 +8,35 @@ import lombok.NoArgsConstructor;
 import java.io.Serial;
 import java.io.Serializable;
 
+/**
+ * AI客户端模型配置查询请求 DTO
+ */
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AiAgentResponseDTO implements Serializable {
+public class AiClientModelQueryRequestDTO implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
 
     /**
-     * 智能体ID
+     * 模型ID
      */
-    private String agentId;
+    private String modelId;
 
     /**
-     * 智能体名称
+     * API配置ID
      */
-    private String agentName;
+    private String apiId;
 
     /**
-     * 描述
+     * 模型类型：openai、deepseek、claude
      */
-    private String description;
+    private String modelType;
 
     /**
-     * 渠道类型(agent，chat_stream)
-     */
-    private String channel;
-
-    /**
-     * 执行策略(auto、flow)
-     */
-    private String strategy;
-
-    /**
-     * 状态(0:禁用,1:启用)
+     * 状态：0-禁用，1-启用
      */
     private Integer status;
 

@@ -8,39 +8,37 @@ import lombok.NoArgsConstructor;
 import java.io.Serial;
 import java.io.Serializable;
 
+/**
+ * AI客户端配置请求 DTO
+ */
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AiAgentResponseDTO implements Serializable {
+public class AiClientRequestDTO implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
 
     /**
-     * 智能体ID
+     * 主键ID（更新时使用）
      */
-    private String agentId;
+    private Long id;
 
     /**
-     * 智能体名称
+     * 客户端ID
      */
-    private String agentName;
+    private String clientId;
+
+    /**
+     * 客户端名称
+     */
+    private String clientName;
 
     /**
      * 描述
      */
     private String description;
-
-    /**
-     * 渠道类型(agent，chat_stream)
-     */
-    private String channel;
-
-    /**
-     * 执行策略(auto、flow)
-     */
-    private String strategy;
 
     /**
      * 状态(0:禁用,1:启用)
